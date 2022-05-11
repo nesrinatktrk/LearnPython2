@@ -1,0 +1,1 @@
+#dosyayı şifreleme... 1)Metin.txt diye bir dosya oluştur içine adını yaz. 2)Key üret. 3)Bu keyi kullanarak metin.txt dosyanızın içeriği değişip şifreli olarak kaydedilsin. #yazı silinsin, sifre görülsün.
