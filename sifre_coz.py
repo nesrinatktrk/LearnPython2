@@ -10,16 +10,13 @@ def dosyaAc(dosya):
 
 key = dosyaAc("key.txt") 
 
-def sifrele(dosya,key):
+def sifreCoz(dosya,key):
     içerik=dosyaAc(dosya)
     f=Fernet(key)
-    şifreliiçerik=f.encrypt(içerik)
+    şifreliiçerik=f.decrypt(içerik)
     with open(dosya,"wb") as dosyalar:
         dosyalar.write(şifreliiçerik)
 
-
-
-sifrele("metin1.txt",key)
-sifrele("metin2.txt",key)
-sifrele("metin3.txt",key)
-
+sifreCoz("metin1.txt",key)
+sifreCoz("metin2.txt",key)
+sifreCoz("metin3.txt",key)
