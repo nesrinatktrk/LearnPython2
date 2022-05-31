@@ -1,4 +1,4 @@
-#bilgisayar klasöründeki bütün dosyalar şifrelenecek. Uygulama girişinde 1-dosya şifrele 2-dosya çözme 3-çıkış 4-hakkında
+#Kullanıcının istediği bütün dosyalar şifrelenecek. Uygulama girişinde 1-dosya şifrele 2-dosya çözme 3-çıkış 4-hakkında
 import os
 from cryptography.fernet import Fernet
 
@@ -16,6 +16,7 @@ while True:
         key=Fernet.generate_key()  #Key üret
         with open("key.txt","wb") as keyDosyasi:  #Keyi unutmamak için dosyaya kaydet
             keyDosyasi.write(key)
+    #keyUret()
 
     def dosyaAc(dosya):
         with open(dosya,"rb") as dosyam:
@@ -23,8 +24,8 @@ while True:
 
     key = dosyaAc("key.txt") 
 
-    if başla == 1:
-        istenilen=input("Şifrelemek istediğiniz dosya")
+    if başla == "1":
+        istenilen=input("Şifrelemek istediğiniz dosya: ")
         def sifrele(dosya,key):
             içerik=dosyaAc(dosya)
             f=Fernet(key)
@@ -34,8 +35,8 @@ while True:
 
         sifrele(istenilen,key)
 
-    if başla == 2:
-        istenilen=input("Şifresini kaldırmak istediğiniz dosya")
+    if başla == "2":
+        istenilen=input("Şifresini kaldırmak istediğiniz dosya: ")
         def sifreCoz(dosya,key):
             içerik=dosyaAc(dosya)
             f=Fernet(key)
@@ -45,12 +46,8 @@ while True:
 
         sifreCoz(istenilen,key)
 
-    if başla==3:
+    if başla=="3":
         print("Uygulamayı kullandığınız için teşekkürler...")
-        quit
+        break
 
-    
-
-
-
-
+   
