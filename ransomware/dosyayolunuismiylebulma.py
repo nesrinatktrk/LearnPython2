@@ -1,6 +1,6 @@
 import os
 istenilen=input("Dosya: ")
-adres=os.path.join(os.path.join(os.environ['USERPROFILE']),"Desktop")
+adres=os.path.join(os.path.join(os.environ['USERPROFILE']),"Desktop") #fonksiyon
 adresno=adres+"/"+istenilen
 adresn=adresno.replace(os.sep, '/')
 for kökdizin,altdizin,dosyalar in os.walk(adresn):
